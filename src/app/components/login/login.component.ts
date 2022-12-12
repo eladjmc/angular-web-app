@@ -9,7 +9,6 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  isRegistering = false;
   errorMessage = '';
   loginForm: FormGroup = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -31,8 +30,5 @@ export class LoginComponent implements OnInit {
     if (!this.errorMessage) {
       this.router.navigate(['list']);
     }
-  }
-  changeLoginMod(){
-    this.isRegistering=!this.isRegistering;
   }
 }

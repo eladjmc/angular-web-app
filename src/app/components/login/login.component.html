@@ -1,12 +1,16 @@
 <app-not-logged color="blue">
-  <div *ngIf="!isRegistering" class="login-page">
+  <div class="login-page">
     <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-      <label for="email">Email: </label>
-      <input name="email" type="text" formControlName="email" />
-      <label for="password">Password: </label>
-      <input name="password" type="password" formControlName="password" />
+      <mat-form-field>
+        <mat-label>Email: </mat-label>
+        <input matInput formControlName="email" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>password: </mat-label>
+        <input type="password" matInput formControlName="password" />
+      </mat-form-field>
       <span *ngIf="errorMessage">{{ errorMessage }}</span>
-      <button type="submit">Login</button>
+      <button mat-raised-button type="submit">Login</button>
     </form>
     <a routerLink="../register">register</a>
   </div>

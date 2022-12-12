@@ -1,9 +1,32 @@
 <app-not-logged color="orange">
-    <div class="register-page">
-      <form class="login-form" >
-        <label for="email"></label>
-        <input name="email" type="email">
-      </form>
-      <a routerLink="../">register</a>
-    </div>
-  </app-not-logged>
+  <div class="register-page">
+    <form
+      class="register-form"
+      [formGroup]="registerForm"
+      (ngSubmit)="onSubmit()"
+    >
+      <mat-form-field>
+        <mat-label>Email: </mat-label>
+        <input matInput formControlName="email" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>password: </mat-label>
+        <input type="password" matInput formControlName="password" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>firstName: </mat-label>
+        <input matInput formControlName="firstName" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>lastName: </mat-label>
+        <input matInput formControlName="lastName" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>agee: </mat-label>
+        <input matInput formControlName="age" />
+      </mat-form-field>
+      <button [disabled]="isRegistered" [ngClass]="{'greenButton': isRegistered}" mat-raised-button type="submit">{{isRegistered ? 'Success, now login' : 'Register' }}</button>
+    </form>
+    <a routerLink="../">Login</a>
+  </div>
+</app-not-logged>

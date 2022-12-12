@@ -13,6 +13,7 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
 
 
 
@@ -33,7 +34,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     MatButtonModule,
     MatGridListModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
