@@ -12,6 +12,7 @@ export class AuthGuard implements CanActivate {
   subscription: Subscription;
 
   constructor(private authService:AuthService){
+    this.authService.checkToken();
     this.subscription = this.authService.loggedUser.pipe(
       map(user => !!user)
     ).subscribe(isLogged => this.isLogged = isLogged)

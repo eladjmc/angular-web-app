@@ -14,6 +14,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
+import {MatTableModule} from '@angular/material/table';
+import { TableComponent } from './components/list/table/table.component';
 
 
 
@@ -26,7 +28,9 @@ import {MatInputModule} from '@angular/material/input';
     LoginComponent,
     ListComponent,
     AdminComponent,
-    NavbarComponent
+    NavbarComponent,
+    TableComponent
+
   ],
   imports: [
     BrowserModule,
@@ -35,7 +39,9 @@ import {MatInputModule} from '@angular/material/input';
     MatButtonModule,
     MatGridListModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    MatTableModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

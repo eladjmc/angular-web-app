@@ -1,5 +1,32 @@
 <app-logged>
   <div class="list-page">
-    <span>list page work</span>
+    <div class="user-info" *ngIf="user$ | async as user">
+      <h1>Hello, {{ user.firstName }} {{ user.lastName }}</h1>
+
+      <form class="add-item-form" [formGroup]="addItemForm" (ngSubmit)="onSubmit(user.email)">
+        <mat-form-field>
+          <mat-label>description: </mat-label>
+          <input matInput formControlName="description" />
+        </mat-form-field>
+        <button mat-raised-button type="submit">Add</button>
+      </form>
+
+      <table class="table">
+        <thead class="thead-dark">
+          <tr  scope="col">
+            <th *ngFor="let columnTitle of displayedColumns" [ngClass]="{'lastColumnTitle': columnTitle === 'Actions'}">{{columnTitle}}</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="list$ | async as list">
+          <tr *ngFor="let listItem of list">
+            <th scope="row">{{list.indexOf(listItem)+1}}</th>
+            <td>{{listItem.description}}</td>
+            <td class="action-buttons">
+              <button>Edit</button>
+              <button (click)="removeItem(user.email ,listItem)" >Remove</button>
+            </td>
+        </tbody>
+      </table>
+    </div>
   </div>
 </app-logged>

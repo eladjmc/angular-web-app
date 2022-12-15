@@ -5,5 +5,29 @@
     align-items: center;
     justify-content: center;
 }
-
+table {
+    width: 100%;
+  }
+.user-info{
+    width: 80%;
+}
+.mat-column-actions{
+    width: 100px;
+}
+th.mat-header-cell{
+    font-weight: bold;
+}
+.action-buttons{
+    display: flex;
+    justify-content: flex-end;
+}
+.lastColumnTitle{
+    text-align: center;
+    width: 1px;
+}
+.table{
+    background-color: white;
+    box-shadow: 5px 3px 3px black;
+    width: 75%;
+}
 

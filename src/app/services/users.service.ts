@@ -14,7 +14,14 @@ export class UsersService {
       age: 18,
       email: 'eladjmc@gmail.com',
       role: Role.USER,
-      list: [],
+      list: [
+        {
+          description:"Walk my dog"
+        },
+        {
+          description:"Eat food"
+        }
+      ],
       password: '135791',
     },
     {
@@ -42,5 +49,18 @@ export class UsersService {
   isUserExist(email: string) {
     const user = this.users.find((user) => user.email === email);
     return !!user;
+  }
+
+  setUserList(userToSet:User){
+    const userToChange = this.users.find((user)=> user.email===userToSet.email);
+    if(!userToChange){
+      return;
+    }
+    userToChange.list = userToSet.list;
+  }
+
+  getUserByEmail(email:string){
+    return this.users.find((user)=> user.email === email);
+
   }
 }

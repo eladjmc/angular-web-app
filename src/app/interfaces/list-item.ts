@@ -2,5 +2,5 @@
 
 export interface ListItem {
   description: string;
-  isComplete:boolean;
+  isComplete?:boolean;
 }
