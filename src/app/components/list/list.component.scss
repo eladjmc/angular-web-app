@@ -2,7 +2,6 @@
     width: 100%;
     background-color: #D9D9D9;
     display: flex;
-    // align-items: center;
     padding-top: 10%;
     justify-content: center;
 }
@@ -24,6 +23,7 @@ th.mat-header-cell{
 .action-buttons{
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     height: 45px;
 }
 .last-Col-Title{
@@ -40,6 +40,13 @@ th.mat-header-cell{
     width: 75%;
 }
 .selected-row{
-    background-color:rgb(150, 230, 150)
+    background-color:rgb(173, 173, 178)
+}
+.green-button{
+    background-color: rgba(194, 248, 194, 0.479);
+}
+.red-button{
+    background-color: rgba(99, 57, 57, 0.333);
+    margin-left: 3px;
 }
 

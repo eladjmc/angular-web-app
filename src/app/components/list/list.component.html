@@ -31,8 +31,8 @@
             <th class="first-col-title" scope="row">{{list.indexOf(listItem)+1}}</th>
             <td>{{listItem.description}}</td>
             <td class="action-buttons">
-              <button [disabled]="isEditing" (click)="editItem(list.indexOf(listItem),listItem)">Edit</button>
-              <button [disabled]="isEditing" (click)="removeItem(user.email ,listItem)" >Remove</button>
+              <button class="green-button" [disabled]="isEditing" (click)="editItem(list.indexOf(listItem),listItem)">Edit</button>
+              <button class="red-button" [disabled]="isEditing" (click)="removeItem(user.email ,listItem)" >Remove</button>
             </td>
         </tbody>
       </table>
