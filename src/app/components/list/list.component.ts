@@ -15,10 +15,16 @@ export class ListComponent implements OnInit {
   addItemForm: FormGroup = new FormGroup({
     description: new FormControl('', [Validators.required]),
   });
+  editItemForm: FormGroup = new FormGroup({
+    description: new FormControl('', [Validators.required]),
+  });
 
   displayedColumns = ['Task', 'Description', 'Actions'];
   user$: Observable<User | null>;
   list$: Observable<ListItem[]>;
+  isEditing = false;
+  editItemIndex = -1;
+  savedListItem: ListItem = { description: '' };
 
   constructor(private authService: AuthService) {
     this.user$ = this.authService.loggedUser;
@@ -38,5 +44,29 @@ export class ListComponent implements OnInit {
     this.authService.addToUserList(email, this.addItemForm.value.description);
     this.addItemForm.reset();
     this.addItemForm.markAsPristine();
+  }
+
+  toggleEdit() {
+    this.isEditing = !this.isEditing;
+    if (!this.isEditing) {
+      this.editItemForm.reset();
+    }
+    this.editItemIndex = -1;
+
+  }
+  editItem(editItemIndex: number, listItem: ListItem) {
+    this.toggleEdit();
+    this.editItemIndex = editItemIndex;
+    this.editItemForm.get('description')?.setValue(listItem.description);
+    this.savedListItem=listItem;
+  }
+
+  onSubmitEdit(email:string) {
+    const newListItem = {'description':this.editItemForm.get('description')?.value};
+    if(!newListItem){
+      return;
+    }
+    this.authService.editItemInUserList(email,this.savedListItem,newListItem);
+    this.toggleEdit();
   }
 }

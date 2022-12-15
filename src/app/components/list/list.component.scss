@@ -2,12 +2,16 @@
     width: 100%;
     background-color: #D9D9D9;
     display: flex;
-    align-items: center;
+    // align-items: center;
+    padding-top: 10%;
     justify-content: center;
 }
 table {
     width: 100%;
+
+
   }
+
 .user-info{
     width: 80%;
 }
@@ -20,8 +24,13 @@ th.mat-header-cell{
 .action-buttons{
     display: flex;
     justify-content: flex-end;
+    height: 45px;
 }
-.lastColumnTitle{
+.last-Col-Title{
+    text-align: center;
+    width: 1px;
+}
+.first-col-title{
     text-align: center;
     width: 1px;
 }
@@ -29,5 +38,8 @@ th.mat-header-cell{
     background-color: white;
     box-shadow: 5px 3px 3px black;
     width: 75%;
+}
+.selected-row{
+    background-color:rgb(150, 230, 150)
 }
 

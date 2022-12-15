@@ -44,6 +44,18 @@ export class AuthService {
     user.list = newList;
     this.loggedUser.next(user);
   }
+  editItemInUserList(userEmail: string, oldItem: ListItem, newItem: ListItem) {
+    const user = this.usersService.getUserByEmail(userEmail);
+    if (!user) {
+      return;
+    }
+    const index = user.list.indexOf(oldItem);
+
+    if (index !== -1) {
+      user.list[index] = newItem;
+    }
+    this.loggedUser.next(user);
+  }
 
   checkToken() {
     const token = localStorage.getItem('token');

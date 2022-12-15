@@ -2,8 +2,17 @@
   <div class="list-page">
     <div class="user-info" *ngIf="user$ | async as user">
       <h1>Hello, {{ user.firstName }} {{ user.lastName }}</h1>
-
-      <form class="add-item-form" [formGroup]="addItemForm" (ngSubmit)="onSubmit(user.email)">
+      <div *ngIf="isEditing">
+        <form class="edit-item-form" [formGroup]="editItemForm" (ngSubmit)="onSubmitEdit(user.email)">
+          <mat-form-field>
+            <mat-label>description: </mat-label>
+            <input matInput formControlName="description" />
+          </mat-form-field>
+          <button mat-raised-button type="submit">Save</button>
+          <button mat-raised-button (click)="toggleEdit()" >Cancel</button>
+        </form>
+      </div>
+      <form class="add-item-form" *ngIf="!isEditing" [formGroup]="addItemForm" (ngSubmit)="onSubmit(user.email)">
         <mat-form-field>
           <mat-label>description: </mat-label>
           <input matInput formControlName="description" />
@@ -14,16 +23,16 @@
       <table class="table">
         <thead class="thead-dark">
           <tr  scope="col">
-            <th *ngFor="let columnTitle of displayedColumns" [ngClass]="{'lastColumnTitle': columnTitle === 'Actions'}">{{columnTitle}}</th>
+            <th *ngFor="let columnTitle of displayedColumns" [ngClass]="{'last-Col-Title': columnTitle === 'Actions' , 'first-col-title': columnTitle === 'Task'}">{{columnTitle}}</th>
           </tr>
         </thead>
         <tbody *ngIf="list$ | async as list">
-          <tr *ngFor="let listItem of list">
-            <th scope="row">{{list.indexOf(listItem)+1}}</th>
+          <tr [ngClass]="{'selected-row': list.indexOf(listItem) === editItemIndex}" *ngFor="let listItem of list">
+            <th class="first-col-title" scope="row">{{list.indexOf(listItem)+1}}</th>
             <td>{{listItem.description}}</td>
             <td class="action-buttons">
-              <button>Edit</button>
-              <button (click)="removeItem(user.email ,listItem)" >Remove</button>
+              <button [disabled]="isEditing" (click)="editItem(list.indexOf(listItem),listItem)">Edit</button>
+              <button [disabled]="isEditing" (click)="removeItem(user.email ,listItem)" >Remove</button>
             </td>
         </tbody>
       </table>
