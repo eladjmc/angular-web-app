@@ -16,6 +16,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
 import { TableComponent } from './components/list/table/table.component';
+import {MatIconModule} from '@angular/material/icon';
+import { PersonalInfoComponent } from './components/personal-info/personal-info.component';
+import {MatListModule} from '@angular/material/list';
+import {MatCardModule} from '@angular/material/card';
+
 
 
 
@@ -29,7 +34,8 @@ import { TableComponent } from './components/list/table/table.component';
     ListComponent,
     AdminComponent,
     NavbarComponent,
-    TableComponent
+    TableComponent,
+    PersonalInfoComponent
 
   ],
   imports: [
@@ -40,7 +46,10 @@ import { TableComponent } from './components/list/table/table.component';
     MatGridListModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatTableModule
+    MatTableModule,
+    MatIconModule,
+    MatListModule,
+    MatCardModule
 
   ],
   providers: [],

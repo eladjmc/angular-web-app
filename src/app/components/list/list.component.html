@@ -27,12 +27,12 @@
           </tr>
         </thead>
         <tbody *ngIf="list$ | async as list">
-          <tr [ngClass]="{'selected-row': list.indexOf(listItem) === editItemIndex}" *ngFor="let listItem of list">
+          <tr [ngClass]="{'selected-row': list.indexOf(listItem) === editItemIndex}" *ngFor="let listItem of list; let i = index">
             <th class="first-col-title" scope="row">{{list.indexOf(listItem)+1}}</th>
             <td>{{listItem.description}}</td>
             <td class="action-buttons">
-              <button class="green-button" [disabled]="isEditing" (click)="editItem(list.indexOf(listItem),listItem)">Edit</button>
-              <button class="red-button" [disabled]="isEditing" (click)="removeItem(user.email ,listItem)" >Remove</button>
+              <button mat-raised-button class="green-button" [disabled]="isEditing" (click)="editItem(i,listItem)">Edit</button>
+              <button mat-raised-button class="red-button" [disabled]="isEditing" (click)="removeItem(user.email ,listItem)" >Remove</button>
             </td>
         </tbody>
       </table>

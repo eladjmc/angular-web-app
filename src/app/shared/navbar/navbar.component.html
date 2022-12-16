@@ -1,9 +1,28 @@
-<div class="navbar">
-<span>option1</span>
-<br>
-<span>option2</span>
-<br>
-<span>option3</span>
-<br>
-<span>option4</span>
+<div class="navbar-logged">
+  <div class="logged-nav-options">
+  <div [routerLink]="'../list'" class="icon-text-container">
+    <mat-icon
+      class="home-icon-custom"
+      aria-hidden="false"
+      aria-label="Example home icon"
+      fontIcon="home"
+      >home</mat-icon
+    >
+    <span>Your list</span>
+  </div>
+  <div [routerLink]="'../personal-info'" class="icon-text-container">
+    <mat-icon
+      class="home-icon-custom"
+      aria-hidden="false"
+      aria-label="Example home icon"
+      fontIcon="home"
+      >person </mat-icon
+    >
+    <span>Personal info</span>
+  </div>
+</div>
+  <div (click)="logout()" class="icon-text-container">
+    <mat-icon>keyboard_backspace</mat-icon>
+    <span>Logout</span>
+  </div>
 </div>

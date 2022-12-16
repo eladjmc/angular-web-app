@@ -1,0 +1,31 @@
+<app-logged>
+  <div *ngIf="user$ | async as user" class="personal-info-page">
+    <!-- <span>Name: {{user.firstName}} {{user.lastName}}</span>
+    <span>Email: {{user.email}}</span>
+    <span>age: {{user.age}}</span>
+    <span>User type: {{userType(user.role)}}</span> -->
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title-group>
+          <mat-card-title>{{user.firstName}} {{user.lastName}}</mat-card-title>
+          <mat-card-subtitle>{{userType(user.role)}}</mat-card-subtitle>
+          <img mat-card-sm-image src="http://cdn.onlinewebfonts.com/svg/img_568657.png" >
+        </mat-card-title-group>
+      </mat-card-header>
+      <mat-card-content>
+
+      </mat-card-content>
+      <mat-card-content>
+        Email: {{user.email}}
+      </mat-card-content>
+      <mat-card-content>
+        age: {{user.age}}
+      </mat-card-content>
+      <mat-card-content>
+        Items in list: {{user.list.length}}
+      </mat-card-content>
+    </mat-card>
+
+
+  </div>
+</app-logged>

@@ -43,7 +43,7 @@ export class ListComponent implements OnInit {
     }
     this.authService.addToUserList(email, this.addItemForm.value.description);
     this.addItemForm.reset();
-    this.addItemForm.markAsPristine();
+    this.addItemForm.get("description")?.setErrors(null)
   }
 
   toggleEdit() {

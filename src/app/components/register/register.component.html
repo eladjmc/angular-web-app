@@ -10,19 +10,19 @@
         <input matInput formControlName="email" />
       </mat-form-field>
       <mat-form-field>
-        <mat-label>password: </mat-label>
+        <mat-label>Password: </mat-label>
         <input type="password" matInput formControlName="password" />
       </mat-form-field>
       <mat-form-field>
-        <mat-label>firstName: </mat-label>
+        <mat-label>First Name: </mat-label>
         <input matInput formControlName="firstName" />
       </mat-form-field>
       <mat-form-field>
-        <mat-label>lastName: </mat-label>
+        <mat-label>Last Name: </mat-label>
         <input matInput formControlName="lastName" />
       </mat-form-field>
       <mat-form-field>
-        <mat-label>agee: </mat-label>
+        <mat-label>Age: </mat-label>
         <input matInput formControlName="age" />
       </mat-form-field>
       <button [disabled]="isRegistered" [ngClass]="{'greenButton': isRegistered}" mat-raised-button type="submit">{{isRegistered ? 'Success, now login' : 'Register' }}</button>

@@ -7,9 +7,19 @@
 }
 table {
     width: 100%;
-
-
   }
+
+form{
+    display: flex;
+    gap: 7px;
+    align-items: center;
+    button{
+        height: 30px;
+    }
+    mat-form-field{
+        width: 35%;
+    }
+}
 
 .user-info{
     width: 80%;
@@ -25,6 +35,7 @@ th.mat-header-cell{
     justify-content: flex-end;
     align-items: center;
     height: 45px;
+    gap: 5px;
 }
 .last-Col-Title{
     text-align: center;
@@ -46,7 +57,7 @@ th.mat-header-cell{
     background-color: rgba(194, 248, 194, 0.479);
 }
 .red-button{
-    background-color: rgba(99, 57, 57, 0.333);
-    margin-left: 3px;
+    background-color: rgba(174, 113, 113, 0.333);
+
 }
 
