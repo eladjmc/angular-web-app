@@ -4,60 +4,10 @@
     display: flex;
     padding-top: 10%;
     justify-content: center;
-}
-table {
-    width: 100%;
-  }
 
-form{
-    display: flex;
-    gap: 7px;
-    align-items: center;
-    button{
-        height: 30px;
+    app-user-list{
+      width: 100%;
+      height: 100%;
     }
-    mat-form-field{
-        width: 35%;
-    }
-}
-
-.user-info{
-    width: 80%;
-}
-.mat-column-actions{
-    width: 100px;
-}
-th.mat-header-cell{
-    font-weight: bold;
-}
-.action-buttons{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    height: 45px;
-    gap: 5px;
-}
-.last-Col-Title{
-    text-align: center;
-    width: 1px;
-}
-.first-col-title{
-    text-align: center;
-    width: 1px;
-}
-.table{
-    background-color: white;
-    box-shadow: 1.8px 1px 1px rgb(111, 108, 108);
-    width: 75%;
-}
-.selected-row{
-    background-color:rgb(173, 173, 178)
-}
-.green-button{
-    background-color: rgba(194, 248, 194, 0.479);
-}
-.red-button{
-    background-color: rgba(174, 113, 113, 0.333);
-
 }
 

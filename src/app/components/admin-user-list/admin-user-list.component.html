@@ -1,5 +1,6 @@
 <app-logged>
   <div class="list-page" *ngIf="user$ | async as user">
+    <h2>Admin Edit mode</h2>
   <app-user-list [user]="user" ></app-user-list>
   </div>
 </app-logged>

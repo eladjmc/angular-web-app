@@ -8,7 +8,6 @@ import { LoggedComponent } from './layouts/logged/logged.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { ListComponent } from './components/list/list.component';
-import { AdminComponent } from './components/admin/admin.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatGridListModule} from '@angular/material/grid-list';
@@ -20,6 +19,8 @@ import {MatIconModule} from '@angular/material/icon';
 import { PersonalInfoComponent } from './components/personal-info/personal-info.component';
 import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
+import { UserListComponent } from './shared/user-list/user-list.component';
+import { AdminUserListComponent } from './components/admin-user-list/admin-user-list.component';
 
 
 
@@ -32,10 +33,11 @@ import {MatCardModule} from '@angular/material/card';
     RegisterComponent,
     LoginComponent,
     ListComponent,
-    AdminComponent,
     NavbarComponent,
     TableComponent,
-    PersonalInfoComponent
+    PersonalInfoComponent,
+    UserListComponent,
+    AdminUserListComponent
 
   ],
   imports: [
