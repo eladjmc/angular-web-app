@@ -1,0 +1,20 @@
+<app-logged>
+  <div>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr scope="col">
+          <th *ngFor="let columnTitle of displayedColumns">{{columnTitle}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users; let i = index">
+          <th scope="row">{{user.firstName}} {{user.lastName}}</th>
+          <td>{{user.email}}</td>
+          <td>{{user.age}}</td>
+          <td class="action-buttons">
+            <button mat-raised-button [routerLink]="'/admin-panel/'+user.id">Edit</button>
+          </td>
+      </tbody>
+    </table>
+  </div>
+</app-logged>

@@ -21,6 +21,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
 import { UserListComponent } from './shared/user-list/user-list.component';
 import { AdminUserListComponent } from './components/admin-user-list/admin-user-list.component';
+import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
 
 
 
@@ -37,7 +38,8 @@ import { AdminUserListComponent } from './components/admin-user-list/admin-user-
     TableComponent,
     PersonalInfoComponent,
     UserListComponent,
-    AdminUserListComponent
+    AdminUserListComponent,
+    AdminPanelComponent
 
   ],
   imports: [

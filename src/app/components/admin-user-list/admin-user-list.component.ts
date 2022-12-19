@@ -18,8 +18,6 @@ export class AdminUserListComponent implements OnInit {
     private usersService:UsersService
   ) {
     this.user$ =this.route.paramMap.pipe(
-        // tap(params => console.log(params)),
-        // map(_ => this.usersService.users[0]),
         switchMap((paramMap) => {
           const id = paramMap.get("id")
           if (!id) {

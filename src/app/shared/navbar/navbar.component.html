@@ -1,4 +1,4 @@
-<div class="navbar-logged">
+<div *ngIf="user$ | async as user" class="navbar-logged">
   <div class="logged-nav-options">
   <div [routerLink]="'/list'" class="icon-text-container">
     <mat-icon
@@ -20,7 +20,7 @@
     >
     <span>Personal info</span>
   </div>
-  <div [routerLink]="'/admin/2'" class="icon-text-container">
+  <div *ngIf="user.role === 'admin' " [routerLink]="'/admin-panel/'" class="icon-text-container">
     <mat-icon
       class="home-icon-custom"
       aria-hidden="false"
@@ -28,7 +28,7 @@
       fontIcon="home"
       >home</mat-icon
     >
-    <span>Admin test</span>
+    <span>Admin panel</span>
   </div>
 </div>
   <div (click)="logout()" class="icon-text-container">
