@@ -1,0 +1,30 @@
+.admin-panel-page{
+  width: 100%;
+  background-color: #D9D9D9;
+  padding-top: 8%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+    table{
+      width: 80%;
+    }
+}
+h2{
+  padding-bottom: 4%;
+}
+.table{
+  background-color: white;
+  box-shadow: 1.8px 1px 1px rgb(111, 108, 108);
+  width: 75%;
+}
+.selected-row{
+  background-color:rgb(173, 173, 178)
+}
+.green-button{
+  background-color: rgba(194, 248, 194, 0.479);
+}
+.red-button{
+  background-color: rgba(174, 113, 113, 0.333);
+
+}
+
