@@ -1,6 +1,6 @@
 <div class="user-info" >
   <h1>Hello, {{ user.firstName }} {{ user.lastName }}</h1>
-  <div *ngIf="isEditing">
+  <div class="edit-form-container" *ngIf="isEditing">
     <form class="edit-item-form" [formGroup]="editItemForm" (ngSubmit)="onSubmitEdit(user.email)">
       <mat-form-field>
         <mat-label>description: </mat-label>

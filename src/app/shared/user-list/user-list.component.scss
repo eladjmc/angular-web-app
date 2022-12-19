@@ -2,12 +2,22 @@
 form{
   display: flex;
   gap: 7px;
-  align-items: center;
+  align-items:center ;
+  width: 55%;
   button{
       height: 30px;
   }
   mat-form-field{
-      width: 35%;
+      width: 85%;
+  }
+}
+.edit-form-container{
+  width: 55%;
+  form{
+  display: flex;
+  gap: 7px;
+  align-items:center ;
+  width: 100%;
   }
 }
 

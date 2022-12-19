@@ -14,7 +14,6 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
-import { TableComponent } from './components/list/table/table.component';
 import {MatIconModule} from '@angular/material/icon';
 import { PersonalInfoComponent } from './components/personal-info/personal-info.component';
 import {MatListModule} from '@angular/material/list';
@@ -35,7 +34,6 @@ import { AdminPanelComponent } from './components/admin-panel/admin-panel.compon
     LoginComponent,
     ListComponent,
     NavbarComponent,
-    TableComponent,
     PersonalInfoComponent,
     UserListComponent,
     AdminUserListComponent,
